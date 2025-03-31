@@ -1,114 +1,150 @@
-/* ==UserStyle==
-@name         Remove YouTube Shorts
-@version      20220227.16.06
-@namespace    userstyles.world/user/lennzone
-@description  For people who don't like YouTube Shorts
-@author       lennzone
-@license      CC LennZone
-==/UserStyle== */
-
-@-moz-document url-prefix("https://www.youtube.com") {
-    :root {
-        --round-corner-radius: 12px;
-        --like-color: lime;
-        --dislike-color: red;
-    }
-
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    body::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* Hide scrollbar for IE, Edge and Firefox */
-    body {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-    }
-
-    #items.playlist-items.style-scope.ytd-playlist-panel-renderer {
-        padding: 0;
-    }
-
-    ytd-thumbnail.ytd-rich-grid-media,
-    ytd-thumbnail.ytd-grid-video-renderer,
-    ytd-statement-banner-renderer,
-        /* #player.ytd-watch-flexy, */
-    ytd-compact-video-renderer:not([watch-feed-big-thumbs]) ytd-thumbnail.ytd-compact-video-renderer,
-    ytd-compact-radio-renderer:not([watch-feed-big-thumbs]) ytd-thumbnail.ytd-compact-radio-renderer,
-    tp-yt-paper-button.ytd-subscribe-button-renderer,
-    #contents.ytd-rich-metadata-row-renderer .ytd-rich-metadata-row-renderer,
-    #contentContainer,
-    #header.ytd-rich-grid-renderer,
-    yt-chip-cloud-chip-renderer.style-scope,
-    .ytp-timed-markers-container,
-    #clarify-box,
-    ytd-playlist-panel-renderer.style-scope,
-    ytd-playlist-panel-video-renderer.style-scope > a > div > div:nth-child(2),
-    .ytp-offline-slate-bar,
-    #chat,
-    #card,
-    #avatar,
-    #sponsor-button > ytd-button-renderer,
-    #overlays > ytd-thumbnail-overlay-time-status-renderer,
-    #donation-shelf > ytd-donation-shelf-renderer,
-    #campaign-logo,
-    #donate-button,
-    #dismissible > ytd-thumbnail,
-    ytd-horizontal-card-list-renderer.style-scope > div > div div ytd-macro-markers-list-item-renderer,
-    ytd-horizontal-card-list-renderer.style-scope:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > ytd-macro-markers-list-item-renderer a div {
-        border-radius: var(--round-corner-radius);
-        overflow: hidden;
-    }
-
-    #above-the-fold > div:nth-child(1) {
-        margin-top: -1.25rem;
-    }
-
-    #contents > ytd-rich-section-renderer,
-    #items > ytd-guide-entry-renderer:nth-child(2),
-    #contents > ytd-reel-shelf-renderer,
-    #section-items > ytd-guide-entry-renderer:nth-child(3),
-    #items > ytd-guide-entry-renderer:nth-child(5),
-    #sections > ytd-guide-section-renderer:nth-child(2),
-    #sections > ytd-guide-section-renderer:nth-child(3),
-    #sections > ytd-guide-section-renderer:nth-child(4),
-    #footer,
-    #items > ytd-guide-entry-renderer:nth-child(4),
-    #items > ytd-mini-guide-entry-renderer:nth-child(2),
-    #items > ytd-mini-guide-entry-renderer:nth-child(4),
-    #items > ytd-mini-guide-entry-renderer:nth-child(3),
-    div#header.style-scope.ytd-rich-grid-renderer,
-    #buttons > ytd-topbar-menu-button-renderer.style-scope.ytd-masthead.style-default,
-    #voice-search-button,
-    #clarify-box > ytd-info-panel-container-renderer,
-    #video-companion-root > div,
-    #end > div.vidiq-toolbar-stats-container,
-    #items > ytd-guide-entry-renderer.vidiq-link-mounter,
-    ytd-rich-item-renderer[is-slim-media],
-    #big-yoodle {
-        display: none;
-    }
-
-
-    #ryd-bar {
-        background-color: var(--like-color);
-    }
-    #segmented-like-button > ytd-toggle-button-renderer > yt-button-shape > button > div.cbox.yt-spec-button-shape-next__button-text-content {
-        color: var(--like-color);
-    }
-    #segmented-like-button > ytd-toggle-button-renderer > yt-button-shape > button > div.yt-spec-button-shape-next__icon {
-        filter: invert(45%) sepia(48%) saturate(1868%) hue-rotate(85deg) brightness(128%) contrast(118%);
-    }
-
-    #segmented-dislike-button > ytd-toggle-button-renderer > yt-button-shape > button > div.cbox.yt-spec-button-shape-next__button-text-content,
-    #segmented-dislike-button > ytd-toggle-button-renderer > yt-button-shape > button > div.yt-spec-button-shape-next__icon {
-        color: var(--dislike-color);
-    }
-    #ryd-bar-container {
-        background-color: var(--dislike-color);
-    }
-    #chips > yt-chip-cloud-chip-renderer.style-scope.yt-chip-cloud-renderer {
-        margin-top: 0 !important;
-    }
+:root {
+    --round-corner-radius: 12px;
+    --like-color: lime;
+    --dislike-color: red;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#items.playlist-items.style-scope.ytd-playlist-panel-renderer {
+    padding: 0;
+}
+
+ytd-thumbnail.ytd-rich-grid-media,
+ytd-thumbnail.ytd-grid-video-renderer,
+ytd-statement-banner-renderer,
+    /* #player.ytd-watch-flexy, */
+ytd-compact-video-renderer:not([watch-feed-big-thumbs]) ytd-thumbnail.ytd-compact-video-renderer,
+ytd-compact-radio-renderer:not([watch-feed-big-thumbs]) ytd-thumbnail.ytd-compact-radio-renderer,
+tp-yt-paper-button.ytd-subscribe-button-renderer,
+#contents.ytd-rich-metadata-row-renderer .ytd-rich-metadata-row-renderer,
+#contentContainer,
+#header.ytd-rich-grid-renderer,
+yt-chip-cloud-chip-renderer.style-scope,
+.ytp-timed-markers-container,
+#clarify-box,
+ytd-playlist-panel-renderer.style-scope,
+ytd-playlist-panel-video-renderer.style-scope > a > div > div:nth-child(2),
+.ytp-offline-slate-bar,
+#chat,
+#card,
+#avatar,
+#sponsor-button > ytd-button-renderer,
+#overlays > ytd-thumbnail-overlay-time-status-renderer,
+#donation-shelf > ytd-donation-shelf-renderer,
+#campaign-logo,
+#donate-button,
+#dismissible > ytd-thumbnail,
+ytd-horizontal-card-list-renderer.style-scope > div > div div ytd-macro-markers-list-item-renderer,
+ytd-horizontal-card-list-renderer.style-scope:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > ytd-macro-markers-list-item-renderer a div,
+#video-preview-container.ytd-video-preview {
+    border-radius: var(--round-corner-radius);
+    overflow: hidden;
+}
+
+#above-the-fold > div:nth-child(1){
+    margin-top: -8px;
+}
+
+/*youtube miniplayer close button*/
+body._top-left #efyt-close-mini-player#efyt-close-mini-player {
+    top: 25px;
+    left: 20px;
+}
+
+#efyt-progress {
+    z-index: 2200;
+    height: 10px;
+    border-radius: 0px 0px var(--round-corner-radius) var(--round-corner-radius);
+    overflow: hidden;
+    top: 245px !important;
+}
+
+#movie_player.ytp-small-mode,
+body.efyt-mini-player #movie_player:not(.ytp-fullscreen) {
+    border-radius: var(--round-corner-radius) var(--round-corner-radius) 0px 0px;
+    box-shadow: 0px 5px 25px 0px black;
+}
+
+
+#contents > ytd-rich-section-renderer,
+#items > ytd-guide-entry-renderer:nth-child(2),
+#contents > ytd-reel-shelf-renderer,
+#items > ytd-guide-entry-renderer:nth-child(5),
+#sections > ytd-guide-section-renderer:nth-child(2),
+#sections > ytd-guide-section-renderer:nth-child(3),
+#sections > ytd-guide-section-renderer:nth-child(4),
+#footer,
+#items > ytd-guide-entry-renderer:nth-child(4),
+#items > ytd-mini-guide-entry-renderer:nth-child(2),
+#items > ytd-mini-guide-entry-renderer:nth-child(4),
+#items > ytd-mini-guide-entry-renderer:nth-child(3),
+div#header.style-scope.ytd-rich-grid-renderer,
+#buttons > ytd-topbar-menu-button-renderer.style-scope.ytd-masthead.style-default,
+#voice-search-button,
+#clarify-box > ytd-info-panel-container-renderer,
+#video-companion-root > div,
+#end > div.vidiq-toolbar-stats-container,
+#items > ytd-guide-entry-renderer.vidiq-link-mounter,
+ytd-rich-item-renderer[is-slim-media],
+#big-yoodle,
+*[tab-title="Shorts"],
+*[tab-title="Store"],
+.yt-tab-group-shape-wiz__slider,
+*[collections],
+#items > ytd-reel-item-renderer,
+#messages,
+#clarify-box,
+#alerts {
+    display: none !important;
+}
+
+ytd-rich-item-renderer:has(ytd-thumbnail-overlay-bottom-panel-renderer) {
+    display: none;
+}
+
+#ryd-bar {
+    background-color: var(--like-color);
+}
+#segmented-like-button > ytd-toggle-button-renderer > yt-button-shape > button > div.cbox.yt-spec-button-shape-next__button-text-content {
+    color: var(--like-color);
+}
+#segmented-like-button > ytd-toggle-button-renderer > yt-button-shape > button > div.yt-spec-button-shape-next__icon{
+    filter: invert(45%) sepia(48%) saturate(1868%) hue-rotate(85deg) brightness(128%) contrast(118%);
+}
+
+#segmented-dislike-button > ytd-toggle-button-renderer > yt-button-shape > button > div.cbox.yt-spec-button-shape-next__button-text-content,
+#segmented-dislike-button > ytd-toggle-button-renderer > yt-button-shape > button > div.yt-spec-button-shape-next__icon{
+    color: var(--dislike-color);
+}
+#ryd-bar-container {
+    background-color: var(--dislike-color);
+}
+#chips > yt-chip-cloud-chip-renderer.style-scope.yt-chip-cloud-renderer {
+    margin-top: 0 !important;
+}
+}
+
+
+/*comment styling*/
+html[dark] #contents > ytd-comment-thread-renderer {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#contents > ytd-comment-thread-renderer {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 16px 0px 11px 16px;
+}
+#below {
+    padding-top: 1rem;
+}
